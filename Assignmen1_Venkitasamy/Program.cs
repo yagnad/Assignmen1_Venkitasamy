@@ -42,7 +42,7 @@ namespace Assignmen1_Venkitasamy
                             
                             break;
 
-                        //Get the series value
+                        //Get the series value case
                         case 2:
                             //Displaying the user choice
                             Console.WriteLine("You have chosen to get series result for N");
@@ -50,7 +50,8 @@ namespace Assignmen1_Venkitasamy
                             Console.WriteLine("Input the number N: ");
                             int n = Convert.ToInt32(Console.ReadLine());
 
-                            printFactorial(n);//Calling the return method to calculate the series value of N
+
+                            getSeriesResult(n);//Calling the return method to calculate the series value of N
 
                             break;
                         
@@ -67,7 +68,7 @@ namespace Assignmen1_Venkitasamy
 
                             break;
 
-                        //Binary too decimal conversion
+                        //Binary to decimal conversion case
                         case 4:
                             //Displaying the user choice
                             Console.WriteLine("You have chosen to convert the binary to Decimal for N");
@@ -79,7 +80,7 @@ namespace Assignmen1_Venkitasamy
 
                             break;
 
-                        //Print traingle
+                        //Print star traingle case
                         case 5:
                             //Displaying the user choice
                             Console.WriteLine("You have chosen to print triangle using * for N");
@@ -90,7 +91,7 @@ namespace Assignmen1_Venkitasamy
                             
                             break;
 
-                        //Compute frquency in the array
+                        //Compute frquency in the array case
                         case 6:
                             //Displaying the user choice
                             Console.WriteLine("You have chosen to compute the frequency of elements in the array");
@@ -176,6 +177,7 @@ namespace Assignmen1_Venkitasamy
         //Method to compute factorial values
         private static double printFactorial(int n)
         {
+
             int i, f;
             f = 1;
             
@@ -183,11 +185,38 @@ namespace Assignmen1_Venkitasamy
 
                 f = f * i;
 
-            Console.WriteLine("The factorial of {0} is : {1}\n", n, f);
-            
             return n;
             
         }//End of the factorial method
+
+        private static double getSeriesResult(int n)
+        {
+
+            int i = 0;
+            double sum = 0;
+            
+            
+            for (i = 1; i <= n; i++)
+            {
+                double temp_sum = printFactorial(i) / (i + 1);
+
+                if (i % 2 == 0)
+                {
+                    temp_sum = temp_sum * (-1);
+                    sum = sum + temp_sum;
+                }
+                else
+                {
+                    sum = sum + temp_sum;
+                }
+                
+            }
+            Console.WriteLine("The result of the series is " + Math.Round(sum,3));
+            
+            return sum; //Returns the sum
+            
+            
+        }//End of GetSeriesResult method
 
         private static long decimalToBinary(long a)
         {
@@ -228,22 +257,35 @@ namespace Assignmen1_Venkitasamy
             return b;
         }//End of the method binaryToDecimal
 
+        //Method to print star triangle
         private static void printTriange(int k)
 
         {
-            int number, i,  count = 1;
-            number = k;
-            count = number - 1;
-            for (k = 1; k <= number; k++)
+            //Using try block to validate user input
+            try
             {
-                for (i = 1; i <= count; i++)
-                    Console.Write(" ");
-                count--;
-                for (i = 1; i <= 2 * k - 1; i++)
-                    Console.Write("*");
-                Console.WriteLine();
-            }
 
+                int number, i, count = 1;
+                number = k;
+                count = number - 1;
+                for (k = 1; k <= number; k++)
+                {
+                    for (i = 1; i <= count; i++)
+                        Console.Write(" ");
+                    count--;
+                    for (i = 1; i <= 2 * k - 1; i++)
+                        Console.Write("*");
+                    Console.WriteLine();
+                }//end of for loop
+            }//end of try
+
+            //Using catch block for bad user input
+            catch
+            {
+                Console.WriteLine("Exception occured while computing printTriangle()");
+                Console.WriteLine("Press any key to exit..");
+                Console.ReadKey();
+            }
         }//End of print triangle method
 
 
