@@ -414,7 +414,10 @@ namespace Assignmen1_Venkitasamy
     }//End of Class
 } //End of namespace
 
-/*
+/*Self-reflections: The last calculation of computing the frequency of elements in the array is unclear in the question. 
+ * It was not clear as to gather user input for the creation of array or random generation of integers in the array. 
+ * To keep things simple and avoid confusion, I made the For loop to gather user input for populating the array 
+ * to compute the frequency of the elements.
  * 
- * 
+ * Working on this assignment helped me in gathering knowlege about coding with the basic C# functions and fondation of coding . 
  */
