@@ -10,7 +10,6 @@ namespace Assignmen1_Venkitasamy
     {
         public static void Main()
         {
-            
             //Gather user input to calculate results
             Console.WriteLine("Hi! Choose from the following operations: " +
                 "\n 1: Print Prime Numbers" +
@@ -47,20 +46,16 @@ namespace Assignmen1_Venkitasamy
                         int Y = int.Parse(Y_input);//Converting user input
 
                         printPrimeNos(X, Y); //Calls the void method to execute the calculation
-
                         break;
 
                     //Get the series value case
                     case 2:
                         //Displaying the user choice
                         Console.WriteLine("You have chosen to get series result for N");
-
                         Console.WriteLine("Input the number N: ");
                         int n = Convert.ToInt32(Console.ReadLine());
 
-
                         getSeriesResult(n);//Calling the return method to calculate the series value of N
-
                         break;
 
                     //Decimal to binary conversion case
@@ -73,19 +68,16 @@ namespace Assignmen1_Venkitasamy
                         int a = Convert.ToInt32(Console.ReadLine());//Converting user input
 
                         decimalToBinary(a);//Calls the return method to display the binary conversion
-
                         break;
 
                     //Binary to decimal conversion case
                     case 4:
                         //Displaying the user choice
                         Console.WriteLine("You have chosen to convert the binary to Decimal for N");
-
                         Console.Write("Enter a Binary Number(1s and 0s) : ");//Gathering user input
                         int b = int.Parse(Console.ReadLine()); //Converting user input
 
                         binaryToDecimal(b);//Calls the return method to display the decimal conversion
-
                         break;
 
                     //Print star traingle case
@@ -96,7 +88,6 @@ namespace Assignmen1_Venkitasamy
 
                         int k = int.Parse(Console.ReadLine());
                         printTriange(k);//Calls the method to print traingle using *
-
                         break;
 
                     //Compute frquency in the array case
@@ -106,7 +97,6 @@ namespace Assignmen1_Venkitasamy
                         int[] arr = new int[] { 1, 2, 3, 2, 2, 1, 3, 2 };
 
                         computeFrequency(arr);
-
                         break;
 
                     //Exit program
@@ -116,12 +106,10 @@ namespace Assignmen1_Venkitasamy
                         break;
 
                     //Default message incase user does not select valid option
-                    default:
+                        default:
 
                         Console.WriteLine("Please enter valid integers only next time..");
                         break;
-
-
                 }//End of switch
 
                 //To freeze user selection in the console
@@ -142,7 +130,6 @@ namespace Assignmen1_Venkitasamy
 
         //Print prime number case method
         private static void printPrimeNos(int X, int Y)
-
         {
             //This method prints all the prime numbers between X and Y
             Console.WriteLine("Find all prime numbers between 2 integers X and Y: ");
@@ -332,7 +319,6 @@ namespace Assignmen1_Venkitasamy
             //Using try block to validate user input
             try
             {
-
                 int number, i, count = 1;
                 number = k;
                 count = number - 1;
