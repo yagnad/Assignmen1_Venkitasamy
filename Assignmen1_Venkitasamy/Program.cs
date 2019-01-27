@@ -10,6 +10,7 @@ namespace Assignmen1_Venkitasamy
     {
         public static void Main()
         {
+            
             //Gather user input to calculate results
             Console.WriteLine("Hi! Choose from the following operations: " +
                 "\n 1: Print Prime Numbers" +
@@ -26,6 +27,10 @@ namespace Assignmen1_Venkitasamy
             //Using try block to validate the user input 
             try
             {
+                //Using if statement to validate user input between 1-7
+                if ((userSelection>0 ) && (userSelection <8))
+
+                 //Using Switch - case condition to categorize the operations 
                 switch (userSelection)
                 {
                     //Print Prime nos case
